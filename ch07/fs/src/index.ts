@@ -2,8 +2,6 @@ import { open } from "node:fs/promises"
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-
-
 (async () => {
     const base = fileURLToPath(import.meta.url);
     const filedir = path.dirname(base);
