@@ -13,15 +13,14 @@ async function readFile(): Promise<number> {
     file.close();
     return (finds ? finds.length : 0);
 }
+const timeOut = (ms: number): Promise<undefined> => new Promise(resolve => setTimeout(resolve, ms));
 
-const timeOut = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 const tasks = [
     readFile(),
     timeOut(1).then(() => {
         throw new Error("timeout");
     })
 ];
-
 Promise.race([
     tasks
 ])
