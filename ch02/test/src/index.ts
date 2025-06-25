@@ -1,5 +1,3 @@
-import { listenerCount } from "process";
-
 const fizzBuzz = {
     current: 1,
     fizzCount: 0,
